@@ -22,6 +22,11 @@ Employee.prototype.constructor = Employee;
 Employee.prototype.jobGreet = function () {
   console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
 };
+cy.get("@consoleLog").should("be.calledWith", "Hello, my name is Alice and I am 25 years old.");
+cy.get("@consoleLog").should(
+  "be.calledWith",
+  "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
+);
 
 // Usage example
 const person = new Person("Alice", 25);
