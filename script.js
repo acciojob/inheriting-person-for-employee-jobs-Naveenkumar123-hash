@@ -9,7 +9,6 @@ Person.prototype.greet = function () {
   console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
 };
 
-// Employee constructor function
 function Employee(name, age, jobTitle) {
   Person.call(this, name, age);
   this.jobTitle = jobTitle;
@@ -19,8 +18,9 @@ function Employee(name, age, jobTitle) {
 Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.constructor = Employee;
 
-Person.prototype.greet = function () {
-  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+// Prototype method for Employee
+Employee.prototype.jobGreet = function () {
+  console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
 };
 
 // Usage example
