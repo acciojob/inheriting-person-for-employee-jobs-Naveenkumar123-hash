@@ -5,7 +5,7 @@ function Person(name, age) {
 
 // Prototype method for Person
 Person.prototype.greet = function () {
-  console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
+  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
 };
 
 // Employee constructor function
@@ -23,11 +23,11 @@ Employee.prototype.jobGreet = function () {
 };
 
 // Usage example
-const person = new Person("John Doe", 25);
-person.greet(); // Output: Hello, my name is John Doe, I am 25 years old.
+const person = new Person("Alice", 25);
+person.greet();
 
-const employee = new Employee("Alice", 30, "Manager");
-employee.greet(); // Output: Hello, my name is Alice, I am 30 years old.
+const employee = new Employee("Bob", 30, "Manager");
+employee.greet(); 
 employee.jobGreet();
 
 // Do not change code below this line
